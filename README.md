@@ -13,9 +13,17 @@ Tài liệu này ghi lại quá trình đưa một module LiDAR tháo từ thi�
 Đây là nhận dạng **theo giao thức quan sát được**, **không phải** xác nhận rằng mọi module có chữ `Delta2D` đều tương đương Delta-2C PRO, hoặc thông số điện của chúng hoàn toàn giống nhau.
 
 
-![]([https://github.com/pmkhue/LiDAR-Delta-2D-Delta2D_V009-1/blob/main/Test%20distance%202.png])
+### Hình ảnh radar thực tế
 
-![]([https://github.com/pmkhue/LiDAR-Delta-2D-Delta2D_V009-1/blob/main/Test%20distance%202.png?raw=true]))
+**Ảnh thử nghiệm 1:**
+
+![Delta2D_V009-1 — ảnh radar thử nghiệm 1](./Test%20distance%20.png)
+
+**Ảnh thử nghiệm 2:**
+
+![Delta2D_V009-1 — ảnh radar thử nghiệm 2](./Test%20distance%202.png)
+
+> Hai ảnh được lưu trong thư mục gốc của repository, cùng vị trí với file README.md. Tên file lần lượt là `Test distance .png` (có khoảng trắng trước `.png`) và `Test distance 2.png`.
 
 
 ### Trạng thái đã kiểm chứng
@@ -290,7 +298,7 @@ Trong hai ảnh thử gần, radar báo khoảng **221–229 điểm hợp lệ 
 
 
 
-## 10. Tài liệu và nguồn tham khảo
+## 9. Tài liệu và nguồn tham khảo
 
 1. **kaiaai/LDS — Arduino LiDAR library:** <https://github.com/kaiaai/LDS>  
    Tài liệu driver `LDS_DELTA_2C_115200` cho protocol `0x11`/`0x13`, cùng ví dụ sử dụng Arduino.
