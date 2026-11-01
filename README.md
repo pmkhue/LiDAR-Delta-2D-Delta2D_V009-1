@@ -13,9 +13,9 @@ Tài liệu này ghi lại quá trình đưa một module LiDAR tháo từ thi�
 Đây là nhận dạng **theo giao thức quan sát được**, **không phải** xác nhận rằng mọi module có chữ `Delta2D` đều tương đương Delta-2C PRO, hoặc thông số điện của chúng hoàn toàn giống nhau.
 
 
-![Alt text]([image_url](https://github.com/pmkhue/LiDAR-Delta-2D-Delta2D_V009-1/blob/main/Test%20distance%20.png))
+![]([https://github.com/pmkhue/LiDAR-Delta-2D-Delta2D_V009-1/blob/main/Test%20distance%202.png])
 
-![Alt text]([image_url](https://github.com/pmkhue/LiDAR-Delta-2D-Delta2D_V009-1/blob/main/Test%20distance%202.png))
+![]([https://github.com/pmkhue/LiDAR-Delta-2D-Delta2D_V009-1/blob/main/Test%20distance%202.png?raw=true]))
 
 
 ### Trạng thái đã kiểm chứng
