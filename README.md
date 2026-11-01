@@ -12,6 +12,12 @@ Tài liệu này ghi lại quá trình đưa một module LiDAR tháo từ thi�
 
 Đây là nhận dạng **theo giao thức quan sát được**, **không phải** xác nhận rằng mọi module có chữ `Delta2D` đều tương đương Delta-2C PRO, hoặc thông số điện của chúng hoàn toàn giống nhau.
 
+
+![Alt text]([image_url](https://github.com/pmkhue/LiDAR-Delta-2D-Delta2D_V009-1/blob/main/Test%20distance%20.png))
+
+![Alt text]([image_url](https://github.com/pmkhue/LiDAR-Delta-2D-Delta2D_V009-1/blob/main/Test%20distance%202.png))
+
+
 ### Trạng thái đã kiểm chứng
 
 | Hạng mục | Kết quả trên module thử nghiệm |
@@ -264,6 +270,8 @@ curl 'http://192.168.4.1/api/sector?angle=90&half=8'
 
 Trong hai ảnh thử gần, radar báo khoảng **221–229 điểm hợp lệ mỗi vòng**, `zero` theo vòng khoảng **44–45%**, và tần số **7,55 Hz**. Đây là các giá trị hiển thị tại thời điểm chụp.
 
+
+
 ---
 
 ## 8. Các lỗi đã gặp và cách xử lý
@@ -279,38 +287,8 @@ Trong hai ảnh thử gần, radar báo khoảng **221–229 điểm hợp lệ 
 | Arduino: `SectorResult does not name a type` | Thiếu file `SectorResult.h` hoặc lỗi tự sinh prototype của Arduino. Đặt `.ino` và `.h` cùng thư mục. |
 | Điện thoại báo không có Internet | Bình thường: Wi-Fi ESP8266 là mạng AP cục bộ, chỉ phục vụ radar. |
 
----
 
-## 9. Hạn chế và lưu ý khi dùng trên robot
 
-- **Chưa xác minh datasheet đúng model**: điện áp, tầm đo, độ chính xác, khả năng chống bụi/nắng và độ bền motor chưa được nhà sản xuất xác nhận cho PCB này.
-- **Không dùng một mình làm cảm biến an toàn**: tia laser có thể không phát hiện tốt kính, vật đen, vật rất nhỏ, vật ở độ cao khác mặt phẳng quét, hoặc bề mặt phản xạ kém.
-- **Giới hạn khoảng cách**: dữ liệu thực tế xuất hiện tới khoảng 4 m; những giá trị gần ngưỡng trên cần được kiểm tra vì có thể là điểm bão hòa/không phản hồi.
-- **Giới hạn giao diện V7.1**: mỗi 1° lưu tối đa một điểm, ưu tiên điểm có chất lượng cao hơn; đây là phép giảm mẫu để hiển thị, không phải toàn bộ đám mây điểm thô. Các phép tính vùng góc cần đủ số ô có phản hồi.
-- **Lắp trên xe**: cần hiệu chuẩn hướng `0°` của radar với phía trước xe; không suy ra hướng trước chỉ từ nhãn 0° trên web.
-- **Xử lý an toàn**: khi mất gói, tuổi dữ liệu quá lớn hoặc tỷ lệ điểm hợp lệ quá thấp, robot phải chuyển sang trạng thái dừng an toàn; không điều khiển xe chỉ bằng ảnh radar trên trình duyệt.
-- **Nguồn và logic**: phải kiểm tra đầu ra TX so với 3,3 V của ESP8266/ESP32; không giả định do VCC 5 V thì UART chắc chắn an toàn cho GPIO.
-
-### Hướng phát triển
-
-```text
-Delta2D_V009-1
-     |
-     +-- UART 115200 / Delta protocol 0x11
-     |
-ESP32-S3 (driver LDS_DELTA_2C_115200)
-     |-- radar / loại điểm không hợp lệ
-     |-- đồng bộ thời gian / scan ID / hiệu chuẩn hướng
-     |
-     +-- Wi-Fi hoặc UART/USB --> OpenStick / Linux
-                                   |-- occupancy grid / SLAM
-                                   |-- phát hiện vật cản
-                                   +-- lập kế hoạch đường đi
-```
-
-Khi chuyển sang ESP32-S3, **không mặc định dùng GPIO16**: chân camera OV2640 trên từng bo có thể đã sử dụng nhiều GPIO. Cần đối chiếu sơ đồ chân bo thực tế và dùng UART phần cứng phù hợp.
-
----
 
 ## 10. Tài liệu và nguồn tham khảo
 
